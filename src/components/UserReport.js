@@ -2,29 +2,25 @@ import React from 'react';
 import jeremyimage from '../assets/images/image-jeremy.png';
 import PeriodTitle from './PeriodTitle';
 
-class UserReport extends React.Component {
+class UserReport extends React.Component { 
+    
+    displayPeriodTitles = () => {
+        return this.props.periods.map((period) => {
+            return <PeriodTitle title={period} activeperiod={this.props.activeperiod} key={period} onButtonClick={this.props.onButtonClick}/>;
+        } )
+        
+    }
 
-    state = { periods: {Daily:"active",Weekly:"",Monthly:""} }; 
-       
-    handleClick = (e) => {
-      e.preventDefault();
-      this.props.onButtonClick(e.target.outerText.toLowerCase());
-    };
-
-       render () {
+    render () {
         return (
             <div className="report">
                 <div className="profile">
                     <img src={jeremyimage} alt="jeremy" className="avatar" />
-                    <span className="title">Report for</span><span class="profile-name">Jeremy<br/>Robson</span>
+                    <span className="title">Report for</span><span className="profile-name">Jeremy<br/>Robson</span>
                 </div>
                    
                 <div className="period">
-                    
-                    <div className="period-title"><button onClick={this.handleClick} className="btn-period">Daily</button></div>
-                    <div className="period-title"><button onClick={this.handleClick} className="btn-period">Weekly</button></div>
-                    <div className="period-title"><button onClick={this.handleClick} className="btn-period">Monthly</button></div>
-                    <PeriodTitle title={'Daily'} />
+                    {this.displayPeriodTitles()}
                 </div>
             </div>
             

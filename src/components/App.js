@@ -6,18 +6,22 @@ import data from "../data/data.json";
 
 class App extends React.Component {
  
-  state = { period: 'daily' }; 
-  
-  onButtonClick =  (period) => {
-    this.setState({ period: period });
+  state = { periods: ["Daily", "Weekly", "Monthly"], activeperiod:"Daily"};
+
+  onButtonClick =  (periodclicked) => {
+        this.setState({ activeperiod: periodclicked });
   }
 
   render() {
     return (
       <div className="main">
         <div className="activities" >
-            <UserReport onButtonClick={this.onButtonClick}/>
-            <ListActivity activities={data} period={this.state.period}/>
+            <UserReport 
+                onButtonClick={this.onButtonClick} 
+                periods={this.state.periods} 
+                activeperiod={this.state.activeperiod}
+            />
+            <ListActivity activities={data} period={this.state.activeperiod.toLowerCase()}/>
         </div>
       </div>
       
