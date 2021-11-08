@@ -1,5 +1,5 @@
 import React from 'react';
-const daily = "daily";
+
 const Activity = (props) => {
   
         return (
