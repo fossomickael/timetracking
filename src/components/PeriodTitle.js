@@ -3,8 +3,9 @@ import React from 'react';
 class PeriodTitle extends React.Component {
     
     handleClick = (e) => {
+        console.log(e.target);
         e.preventDefault();
-        const periodactive = e.target.outerText.toLowerCase();
+        const periodactive = e.target.textContent || e.target.outerText;
         this.props.onButtonClick(periodactive);
       };
 
