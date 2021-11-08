@@ -26,7 +26,7 @@ body {
     min-height: calc(100vh - 15px);
     padding-bottom: 75px;
     padding-top: 20px;
-  }
+}
 
 .card {
     color: white;  
@@ -137,7 +137,6 @@ body {
 .profile-name {
     font-size: 2.4rem;
     font-weight: 300;
-    
 }
 
 .btn-period {
@@ -150,3 +149,30 @@ body {
 .active {
    color: white;
 }
+
+@media screen and (min-width: 200px) and (max-width: 840px) {
+    .activities {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, auto);
+    }
+
+    .period {
+        display: flex;
+    }
+
+    .profile {
+        display:flex;
+        padding: 10px;
+    }
+
+    .profile-name {
+        font-size: 1.4rem;
+        font-weight: 300;
+    }
+
+    .reportfor {
+        margin: 10px;
+    }
+  
+  }

@@ -16,7 +16,10 @@ class UserReport extends React.Component {
             <div className="report">
                 <div className="profile">
                     <img src={jeremyimage} alt="jeremy" className="avatar" />
+                    <div className="reportfor">
                     <span className="title">Report for</span><span className="profile-name">Jeremy<br/>Robson</span>
+                        
+                    </div>
                 </div>
                    
                 <div className="period">
